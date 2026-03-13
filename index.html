@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lunara Executor</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:radial-gradient(circle at top,#0b0b18,#000);
+color:white;
+overflow-x:hidden;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 40px;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+background:linear-gradient(90deg,#8a5cff,#4cc9ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+font-size:15px;
+}
+
+nav a:hover{
+color:#8a5cff;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:clamp(36px,6vw,64px);
+margin:0;
+background:linear-gradient(90deg,#8a5cff,#4cc9ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+color:#aaa;
+margin-top:15px;
+font-size:17px;
+}
+
+.btn{
+margin-top:30px;
+padding:13px 35px;
+border:none;
+border-radius:10px;
+background:#8a5cff;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 15px rgba(138,92,255,0.4);
+}
+
+.btn:hover{
+background:#6b3fff;
+transform:scale(1.06);
+box-shadow:0 0 25px rgba(138,92,255,0.7);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+padding:70px;
+}
+
+.card{
+background:#0a0a15;
+border:1px solid #1d1d30;
+border-radius:14px;
+padding:30px;
+transition:.35s;
+opacity:0;
+transform:translateY(30px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#8a5cff;
+box-shadow:0 0 20px rgba(138,92,255,0.3);
+}
+
+.card h3{
+margin-top:0;
+color:#8a5cff;
+}
+
+.dashboard{
+padding:90px 20px;
+text-align:center;
+}
+
+.dashboard-box{
+margin:auto;
+margin-top:40px;
+width:90%;
+max-width:900px;
+background:#0a0a15;
+border-radius:15px;
+border:1px solid #1e1e30;
+padding:30px;
+box-shadow:0 0 30px rgba(138,92,255,0.15);
+}
+
+.fake-ui{
+height:300px;
+border-radius:10px;
+background:linear-gradient(145deg,#050509,#101020);
+border:1px solid #26263a;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+}
+
+.download{
+text-align:center;
+padding:120px 20px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+font-size:14px;
+}
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+opacity:.6;
+animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:.2}
+50%{opacity:1}
+100%{opacity:.2}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:700px){
+
+.features{
+padding:40px 20px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+}
+
+</style>
+</head>
+<body>
+<nav>
+
+<div class="logo">🌙 Lunara</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#download">Download</a>
+</div>
+
+</nav>
+
+<section class="hero" id="home">
+
+<h1>Lunara Executor</h1>
+
+<p>Fast • Modern • Clean Roblox Executor</p>
+
+<button class="btn" onclick="scrollDownload()">Download</button>
+
+</section>
+
+<section class="features" id="features">
+
+<div class="card">
+<h3>⚡ Fast Execution</h3>
+<p>Execute scripts instantly with optimized performance.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Monaco Editor</h3>
+<p>Powerful built-in code editor with syntax highlight.</p>
+</div>
+
+<div class="card">
+<h3>🌙 Modern UI</h3>
+<p>Clean executor interface with smooth animations.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Secure</h3>
+<p>Lightweight and safe runtime environment.</p>
+</div>
+
+</section>
+
+<section class="dashboard" id="dashboard">
+
+<h1>Executor Dashboard</h1>
+<p>Preview of Lunara interface</p>
+
+<div class="dashboard-box">
+
+<div class="fake-ui">
+
+Editor Preview UI
+
+</div>
+</div>
+</section>
+
+<section class="download" id="download">
+
+<h1>Download Lunara</h1>
+
+<p>Latest version available</p>
+
+<button class="btn" onclick="download()">Download</button>
+
+</section>
+<footer>
+
+© 2026 Lunara
+
+</footer>
+<script>
+
+function download(){
+alert("Download coming soon 🌙")
+}
+
+function scrollDownload(){
+document.getElementById("download").scrollIntoView()
+}
+
+for(let i=0;i<90;i++){
+
+const star=document.createElement("div")
+
+star.className="star"
+
+star.style.left=Math.random()*100+"vw"
+star.style.top=Math.random()*100+"vh"
+
+star.style.animationDuration=(Math.random()*3+2)+"s"
+
+document.body.appendChild(star)
+
+}
+
+const cards=document.querySelectorAll(".card")
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+})
+})
+
+cards.forEach(card=>observer.observe(card))
+
+</script>
+</body>
+</html>
